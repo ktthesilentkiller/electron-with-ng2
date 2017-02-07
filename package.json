@@ -1,0 +1,70 @@
+{
+  "name": "my-new-app",
+  "productName": "my-new-app",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "lint": "tslint src"
+  },
+  "keywords": [],
+  "author": "KT",
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ],
+        "darwin": [
+          "zip"
+        ],
+        "linux": [
+          "deb",
+          "rpm"
+        ]
+      },
+      "electronPackagerConfig": {},
+      "electronWinstallerConfig": {
+        "name": "my_new_app"
+      },
+      "electronInstallerDebian": {},
+      "electronInstallerRedhat": {},
+      "github_repository": {
+        "owner": ""
+      },
+      "windowsStoreConfig": {
+        "packageName": "",
+        "name": "mynewapp"
+      }
+    }
+  },
+  "dependencies": {
+    "@angular/common": "^2.4.6",
+    "@angular/compiler": "^2.4.6",
+    "@angular/core": "^2.4.6",
+    "@angular/forms": "^2.4.6",
+    "@angular/material": "^2.0.0-beta.1",
+    "@angular/platform-browser": "^2.4.6",
+    "@angular/platform-browser-dynamic": "^2.4.6",
+    "@types/electron": "^1.4.31",
+    "electron-compile": "^5.1.3",
+    "electron-devtools-installer": "^2.1.0",
+    "hammerjs": "^2.0.8",
+    "reflect-metadata": "^0.1.9",
+    "tslib": "^1.5.0",
+    "zone.js": "^0.7.6"
+  },
+  "devDependencies": {
+    "@types/hammerjs": "^2.0.34",
+    "babel-plugin-transform-async-to-generator": "^6.22.0",
+    "babel-preset-env": "^1.1.8",
+    "babel-preset-react": "^6.22.0",
+    "electron-prebuilt-compile": "1.4.15",
+    "tslint": "^4.4.2",
+    "typescript": "^2.1.5"
+  }
+}
