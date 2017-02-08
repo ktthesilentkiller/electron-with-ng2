@@ -2,16 +2,25 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
 import { MaterialModule } from '@angular/material';
-
+//import {LoginModule} from './forms/login/login';
+import { RouterModule, Routes } from '@angular/router';
+import { PageNotFoundComponent } from './not-found.component';
+//import {LoginModule} from './forms/login/login';
 import 'hammerjs';
+
+
+
 
 @Component({
   selector: 'App',
   // templateUrl: './input-form-example.html',
   styleUrls: ['./input-form-example.css'],
   template:
-  `
-  <div>
+  `  <div>
+   <nav>
+    <a routerLink="/login" routerLinkActive="active">Crisis Center</a>
+    <a routerLink="/kt1" routerLinkActive="active">Heroes</a>
+  </nav>
   <md-toolbar color="primary">
     <span><md-icon>mood</md-icon></span>
     <span>Yay, Material in Angular 2!</span>
@@ -32,16 +41,13 @@ import 'hammerjs';
   
   <h2>Welcome to {{name}} Angular2!</h2>
   </md-card>
-
-
   <span class="done">
     <button md-fab>
       <md-icon>check circle</md-icon>
     </button>
   </span>
 </div>
-  
-  <div>
+   <div>
     <h2>Welcome to {{name}} Angular2!</h2>
   <button md-icon-button [mdMenuTriggerFor]="menu">
   <md-icon>more_vert</md-icon>
@@ -63,6 +69,7 @@ import 'hammerjs';
     </div>`
 })
 export class AppComponent implements OnInit {
+
   public readonly name = 'electron-forge KT app';
 
   ngOnInit(): void {
@@ -70,10 +77,21 @@ export class AppComponent implements OnInit {
   }
 }
 
+
+const appRoutes: Routes = [
+
+];
+
+
 @NgModule({
-  imports: [BrowserModule, MaterialModule.forRoot()],
-  declarations: [AppComponent],
-  bootstrap: [AppComponent]
+  imports: [
+    BrowserModule,
+    MaterialModule.forRoot(),
+    RouterModule.forRoot(appRoutes)
+  ],
+  declarations: [AppComponent, PageNotFoundComponent],
+  bootstrap: [AppComponent],
+
 })
 
 export class AppModule { }
