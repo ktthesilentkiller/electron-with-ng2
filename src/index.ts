@@ -5,12 +5,12 @@ import { app, BrowserWindow } from 'electron';
 let mainWindow: Electron.BrowserWindow | null;
 
 const isDevMode = process.execPath.match(/[\\/]electron/);
-
 const createWindow = async () => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    icon: __dirname + './files/images/favicon.png',
   });
 
   // and load the index.html of the app.
